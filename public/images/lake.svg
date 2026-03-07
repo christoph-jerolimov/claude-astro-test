@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="lake-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b3e5fc"/>
+      <stop offset="100%" stop-color="#e1f5fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#lake-sky)"/>
+  <!-- mountains -->
+  <polygon points="0,160 80,80 160,160" fill="#78909c"/>
+  <polygon points="120,160 220,60 320,160" fill="#607d8b"/>
+  <polygon points="260,160 340,90 400,160" fill="#78909c"/>
+  <!-- lake -->
+  <rect y="160" width="400" height="140" fill="#4fc3f7" opacity="0.7"/>
+  <!-- reflection -->
+  <polygon points="0,160 80,240 160,160" fill="#546e7a" opacity="0.3"/>
+  <polygon points="120,160 220,260 320,160" fill="#455a64" opacity="0.3"/>
+  <polygon points="260,160 340,230 400,160" fill="#546e7a" opacity="0.3"/>
+  <!-- shore -->
+  <ellipse cx="200" cy="295" rx="220" ry="15" fill="#8d6e63"/>
+</svg>

@@ -1,0 +1,52 @@
+---
+import type { GalleryImage } from '../data/images';
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="gallery-grid">
+  {images.map((image) => (
+    <figure class="gallery-item">
+      <img src={image.src} alt={image.alt} loading="lazy" />
+      <figcaption>{image.title}</figcaption>
+    </figure>
+  ))}
+</div>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #161616;
+    border: 1px solid #222;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  figcaption {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+</style>

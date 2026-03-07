@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import { images } from '../data/images';
+---
+
+<Layout title="Image Gallery">
+  <h1>Image Gallery</h1>
+  <p class="subtitle">A collection of beautiful landscapes</p>
+  <GalleryGrid images={images} />
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .subtitle {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+</style>

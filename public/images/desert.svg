@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="desert-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#ff8f00"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#desert-sky)"/>
+  <circle cx="350" cy="50" r="35" fill="#fff176"/>
+  <path d="M0,200 Q100,160 200,190 Q300,220 400,180 L400,300 L0,300 Z" fill="#e6a817"/>
+  <path d="M0,230 Q80,200 180,225 Q280,250 400,210 L400,300 L0,300 Z" fill="#d4941a"/>
+  <path d="M0,260 Q120,240 250,260 Q350,275 400,250 L400,300 L0,300 Z" fill="#c2850f"/>
+</svg>
