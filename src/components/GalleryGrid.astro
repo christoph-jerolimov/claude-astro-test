@@ -28,14 +28,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .gallery-item {
     border-radius: 12px;
     overflow: hidden;
-    background: #161616;
-    border: 1px solid #222;
+    background: #fff;
+    border: 1px solid #ddd;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .gallery-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
   }
 
   .gallery-item img {
@@ -48,6 +48,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   figcaption {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
-    color: #ccc;
+    color: #444;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .gallery-item {
+      background: #161616;
+      border-color: #222;
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    figcaption {
+      color: #ccc;
+    }
   }
 </style>

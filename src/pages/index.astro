@@ -14,14 +14,24 @@ import { images } from '../data/images';
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 0.5rem;
     letter-spacing: -0.03em;
   }
 
   .subtitle {
-    color: #888;
+    color: #666;
     margin-bottom: 2rem;
     font-size: 1.1rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1 {
+      color: #fff;
+    }
+
+    .subtitle {
+      color: #888;
+    }
   }
 </style>
