@@ -19,7 +19,7 @@ const next = idx < images.length - 1 ? images[idx + 1] : null;
 
 <Layout title={image.title}>
   <div class="detail">
-    <a href={`${base}/`} class="back">&larr; Back to Gallery</a>
+    <a href={`${base}/#img-${image.id}`} class="back">&larr; Back to Gallery</a>
     <h1>{image.title}</h1>
     <figure>
       <img src={`${base}${image.src}`} alt={image.alt} />

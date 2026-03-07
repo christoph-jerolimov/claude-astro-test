@@ -11,7 +11,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <div class="gallery-grid">
   {images.map((image) => (
-    <a href={`${base}/image/${image.id}/`} class="gallery-link">
+    <a id={`img-${image.id}`} href={`${base}/image/${image.id}/`} class="gallery-link">
       <figure class="gallery-item">
         <img src={`${base}${image.src}`} alt={image.alt} loading="lazy" />
         <figcaption>{image.title}</figcaption>
