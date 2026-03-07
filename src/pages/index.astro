@@ -5,5 +5,21 @@ import { images } from '../data/images';
 ---
 
 <Layout title="Astro Image Gallery">
+  <h1>Welcome</h1>
   <GalleryGrid images={images} />
 </Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1 {
+      color: #fff;
+    }
+  }
+</style>
