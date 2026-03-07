@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { images } from '../../data/images';
+
+export function getStaticPaths() {
+  return images.map((image) => ({
+    params: { id: image.id },
+    props: { image },
+  }));
+}
+
+const { image } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const idx = images.findIndex((img) => img.id === image.id);
+const prev = idx > 0 ? images[idx - 1] : null;
+const next = idx < images.length - 1 ? images[idx + 1] : null;
+---
+
+<Layout title={image.title}>
+  <div class="detail">
+    <a href={`${base}/`} class="back">&larr; Back to Gallery</a>
+    <h1>{image.title}</h1>
+    <figure>
+      <img src={`${base}${image.src}`} alt={image.alt} />
+    </figure>
+    <nav class="pagination">
+      {prev ? (
+        <a href={`${base}/image/${prev.id}/`} class="prev">&larr; {prev.title}</a>
+      ) : <span />}
+      {next ? (
+        <a href={`${base}/image/${next.id}/`} class="next">{next.title} &rarr;</a>
+      ) : <span />}
+    </nav>
+  </div>
+</Layout>
+
+<style>
+  .detail {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .back:hover {
+    color: #333;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  figure {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  figure img {
+    width: 100%;
+    display: block;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .pagination a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  .pagination a:hover {
+    color: #111;
+  }
+
+  .prev {
+    text-align: left;
+  }
+
+  .next {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .back {
+      color: #999;
+    }
+
+    .back:hover {
+      color: #ddd;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    figure {
+      background: #161616;
+      border-color: #222;
+    }
+
+    .pagination a {
+      color: #aaa;
+    }
+
+    .pagination a:hover {
+      color: #fff;
+    }
+  }
+</style>
